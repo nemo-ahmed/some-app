@@ -20,8 +20,8 @@ interface Paddle {
 
 export function Pong() {
   const canvas = useRef<HTMLCanvasElement>(null);
-  const [player, setPlayer] = useState(0);
-  const [aI, setAI] = useState(0);
+  const [playerScore, setPlayerScore] = useState(0);
+  const [aiScore, setAIScore] = useState(0);
   const start = useCallback(() => {
     if (!canvas.current) {
       console.error("Canvas element not found");
@@ -149,6 +149,14 @@ export function Pong() {
         b.y - b.radius < p.y + p.height
       );
     }
+    function outside(b: Ball, p: Paddle): boolean {
+      return (
+        b.x - b.radius < p.x - p.width &&
+        b.x + b.radius > p.x &&
+        b.y + b.radius > p.y &&
+        b.y - b.radius < p.y - p.height
+      );
+    }
 
     // AI movement (basic)
     function aiMove() {
@@ -198,7 +206,6 @@ export function Pong() {
         let direction = ball.velocityX > 0 ? 1 : -1;
         ball.velocityX = direction * ball.speed * Math.cos(angle);
         ball.velocityY = ball.speed * Math.sin(angle);
-      } else {
       }
 
       // Right paddle collision
@@ -214,10 +221,13 @@ export function Pong() {
       }
 
       // Score (reset ball)
-      if (
-        ball.x - ball.radius < 0 ||
-        ball.x + ball.radius > canvas.current.clientWidth
-      ) {
+      if (ball.x + ball.radius > canvas.current.clientWidth) {
+        // If the ball goes past the left paddle
+        setPlayerScore((prev) => prev + 1);
+        resetBall();
+      } else if (ball.x - ball.radius < 0) {
+        // If the ball goes past the left paddle
+        setAIScore((prev) => prev + 1);
         resetBall();
       }
 
@@ -248,7 +258,7 @@ export function Pong() {
         Play
       </button>
       <div className="flex items-center justify-center gap-4 my-4 text-4xl">
-        <h2>{player}</h2>:<h2>{aI}</h2>
+        <h2>{playerScore}</h2>:<h2>{aiScore}</h2>
       </div>
       <canvas ref={canvas} id="pong" width="700" height="400" />
     </main>
