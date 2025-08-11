@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import { Pong } from "../pong/pong";
 import { useSearchParams } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
@@ -11,11 +11,10 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   const [searchParams, setSearchParams] = useSearchParams();
-  console.log(searchParams);
 
   return (
     <>
-      <Welcome />
+      <Pong />
       <h2 className="text-2xl font-bold text-center pb-2">Search Param</h2>
       <div className="flex items-center justify-center gap-4">
         <button
