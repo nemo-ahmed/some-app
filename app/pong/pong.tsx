@@ -190,11 +190,13 @@ export function Pong() {
       drawRect(canvas.current.clientWidth / 2 - 1, i, 2, 15, "#fff");
     }
   }
+
   function draw() {
     if (!canvas.current) {
       console.error("Canvas element not found");
       return;
     }
+
     // Clear
     drawRect(
       0,
@@ -209,6 +211,7 @@ export function Pong() {
     drawCircle(ball.x, ball.y, ball.radius, ball.color);
   }
 
+  // Initialize the game
   useEffect(() => {
     if (!canvas.current) {
       console.error("Canvas element not found");
@@ -237,13 +240,12 @@ export function Pong() {
     });
   }, []);
 
-  // Main game loop
-
   return (
-    <main className="flex flex-col items-center justify-center pt-16 pb-4">
-      <h1 className="-mt-4 text-2xl">Pong</h1>
+    <main className="flex gap-4 flex-col items-center justify-center pt-16 pb-4">
+      <h1 className="text-2xl">Pong</h1>
       <button
         type="button"
+        className="px-4 py-2 bg-green-600 text-gray-100 rounded"
         onClick={function game() {
           update();
           draw();
@@ -252,7 +254,7 @@ export function Pong() {
       >
         Play
       </button>
-      <div className="flex items-center justify-center gap-4 my-4 text-4xl">
+      <div className="flex items-center justify-center gap-4 text-4xl">
         <h2>{playerScore}</h2>:<h2>{aiScore}</h2>
       </div>
       <canvas ref={canvas} id="pong" width={WIDTH} height={HEIGHT} />
