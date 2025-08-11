@@ -149,14 +149,6 @@ export function Pong() {
         b.y - b.radius < p.y + p.height
       );
     }
-    function outside(b: Ball, p: Paddle): boolean {
-      return (
-        b.x - b.radius < p.x - p.width &&
-        b.x + b.radius > p.x &&
-        b.y + b.radius > p.y &&
-        b.y - b.radius < p.y - p.height
-      );
-    }
 
     // AI movement (basic)
     function aiMove() {
@@ -222,7 +214,7 @@ export function Pong() {
 
       // Score (reset ball)
       if (ball.x + ball.radius > canvas.current.clientWidth) {
-        // If the ball goes past the left paddle
+        // If the ball goes past the right paddle
         setPlayerScore((prev) => prev + 1);
         resetBall();
       } else if (ball.x - ball.radius < 0) {
