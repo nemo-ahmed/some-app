@@ -1,6 +1,6 @@
 import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
-import { useSearchParams } from "react-router";
+import { useSearchParams } from "@remix-run/react";
 
 // ? hmm this looks like what we need
 // ├── _auth.login.tsx
