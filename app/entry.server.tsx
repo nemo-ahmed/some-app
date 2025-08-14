@@ -48,6 +48,8 @@ function isBotRequest(userAgent: string | null) {
 
   // isbot < 3.8.0
   if ("default" in isbotModule && typeof isbotModule.default === "function") {
+    // ! This is nothing but an AI generated comment. check if its true
+    // @ts-ignore - isbot@3.8.0 exports a function as default
     return isbotModule.default(userAgent);
   }
 

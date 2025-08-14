@@ -1,6 +1,5 @@
-import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
-import { useSearchParams } from "@remix-run/react";
+import { useSearchParams, type MetaFunction } from "@remix-run/react";
 
 // ? hmm this looks like what we need
 // ├── _auth.login.tsx
@@ -10,12 +9,12 @@ import { useSearchParams } from "@remix-run/react";
 // │   ├── concerts.$city.tsx
 // │   └── concerts.tsx
 
-export function meta({}: Route.MetaArgs) {
+export const meta: MetaFunction = () => {
   return [
     { title: "New React Router App" },
     { name: "description", content: "Welcome to React Router!" },
   ];
-}
+};
 
 export default function Home() {
   const [searchParams, setSearchParams] = useSearchParams();
