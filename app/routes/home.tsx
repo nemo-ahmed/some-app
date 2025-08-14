@@ -2,6 +2,14 @@ import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
 import { useSearchParams } from "react-router";
 
+// ? hmm this looks like what we need
+// ├── _auth.login.tsx
+// │   ├── _auth.register.tsx
+// │   ├── _auth.tsx
+// │   ├── _index.tsx
+// │   ├── concerts.$city.tsx
+// │   └── concerts.tsx
+
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "New React Router App" },

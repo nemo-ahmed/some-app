@@ -5,9 +5,10 @@
     "**/.client/**/*",
     ".react-router/types/**/*"
   ],
+  "exclude": ["node_modules", "tailwindcss"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "types": ["node", "vite/client"],
+    "types": ["@remix-run/node", "vite/client"],
     "target": "ES2022",
     "module": "ES2022",
     "moduleResolution": "bundler",
