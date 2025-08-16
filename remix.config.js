@@ -8,10 +8,6 @@ export default {
   cacheDirectory: "./node_modules/.cache/remix",
   tailwind: true,
   postcss: true,
-  v3_relativeSplatPath: false,
-  v3_lazyRouteDiscovery: false,
-  v3_singleFetch: false,
-  v3_throwAbortReason: false,
   watchPaths: ["./tailwind.config.ts"],
   ignoredRouteFiles: ["**/*"],
   routes: async (defineRoutes) => {

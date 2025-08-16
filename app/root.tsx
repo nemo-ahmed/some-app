@@ -12,6 +12,7 @@ import type { LinksFunction } from "@remix-run/node";
 
 import appStylesHref from "./app.css?url";
 import "./app.css";
+import Nav from "./components/nav";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -37,8 +38,11 @@ export function Layout() {
         <Links />
       </head>
       <body>
+        <Nav />
         <ScrollRestoration />
-        <Outlet />
+        <main>
+          <Outlet />
+        </main>
         <Scripts />
       </body>
     </html>
@@ -46,7 +50,11 @@ export function Layout() {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <main>
+      <Outlet />
+    </main>
+  );
 }
 
 export function ErrorBoundary() {

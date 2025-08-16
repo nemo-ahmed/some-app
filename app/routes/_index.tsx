@@ -1,4 +1,3 @@
-import { Welcome } from "../welcome/welcome";
 import { useSearchParams, type MetaFunction } from "@remix-run/react";
 
 // ? hmm this looks like what we need
@@ -22,7 +21,6 @@ export default function Home() {
 
   return (
     <>
-      <Welcome />
       <h2 className="text-2xl font-bold text-center pb-2">Search Param</h2>
       <div className="flex items-center justify-center gap-4">
         <button
