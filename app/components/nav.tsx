@@ -12,9 +12,6 @@ function Nav() {
       </ul>
       {/* Navigation Links */}
       <ul className="h-full">
-        <li>
-          <NavLink to="register">Register</NavLink>
-        </li>
         {["home wear", "cloth"].map((cat) => (
           <li key={"category_" + encodeDynamicPath(cat)}>
             <NavLink to={`/category/${encodeDynamicPath(cat)}`}>{cat}</NavLink>

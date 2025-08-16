@@ -1,13 +1,5 @@
 import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
-import {
-  Outlet,
-  useInRouterContext,
-  useLoaderData,
-  useNavigate,
-  useOutlet,
-  useOutletContext,
-  useSearchParams,
-} from "@remix-run/react";
+import { Outlet, useLoaderData } from "@remix-run/react";
 import CategoryPageSwitcher from "~/components/category/categoryPageSwitcher";
 import { decodeDynamicPath, paramsDecoder } from "~/utils/dynamicUrlsHandler";
 
@@ -17,10 +9,9 @@ function CategoryType() {
   console.log("category", data);
   return (
     <div>
-      <h1>Category Type</h1>
-      <p>This is a dynamic category type page.</p>
+      <h1 className="capitalize !text-3xl">{decodeDynamicPath(data.type)}</h1>
       <p>Type: {decodeDynamicPath("type")}</p>
-      <CategoryPageSwitcher data={data} />
+      <CategoryPageSwitcher />
       <Outlet />
     </div>
   );

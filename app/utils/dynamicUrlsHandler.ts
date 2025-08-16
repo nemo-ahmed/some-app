@@ -4,8 +4,8 @@ export const encodeDynamicPath = (path: string): string => {
   return path.replaceAll(" ", "_");
 };
 
-export const decodeDynamicPath = (path: string): string => {
-  return path.replaceAll("_", " ");
+export const decodeDynamicPath = (path?: string): string => {
+  return path?.replaceAll("_", " ") ?? "";
 };
 
 export const paramsDecoder = (path: Params): Record<string, string> => {

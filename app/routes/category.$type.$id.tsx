@@ -1,5 +1,5 @@
 import type { HeadersFunction } from "@remix-run/node";
-import { useLoaderData, type MetaFunction } from "@remix-run/react";
+import { type MetaFunction } from "@remix-run/react";
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import { decodeDynamicPath } from "~/utils/dynamicUrlsHandler";
 import Product from "~/components/category/product";
