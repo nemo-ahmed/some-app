@@ -23,6 +23,9 @@ function Nav() {
         <li>
           <NavLink to="logout">Logout</NavLink>
         </li>
+        <li>
+          <NavLink to="register">register</NavLink>
+        </li>
       </ul>
     </nav>
   );
