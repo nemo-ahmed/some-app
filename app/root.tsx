@@ -42,8 +42,12 @@ export function Layout() {
         <Nav />
         <ScrollRestoration />
         <main>
-          <Breadcrumbs />
-          <Outlet />
+          <Outlet
+            context={{
+              ab: 24,
+              cd: "efg",
+            }}
+          />
         </main>
         <Scripts />
       </body>
