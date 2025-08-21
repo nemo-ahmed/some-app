@@ -1,21 +1,10 @@
-import {
-  Link,
-  Navigate,
-  redirect,
-  replace,
-  useLocation,
-  useNavigate,
-  useOutletContext,
-} from "@remix-run/react";
+import { Link, useLocation } from "@remix-run/react";
 import classNames from "classnames";
 import { decodeDynamicPath } from "~/utils/dynamicUrlsHandler";
 
 function Breadcrumbs() {
   const loc = useLocation();
-  const xx = useOutletContext();
-  // const navigate = useNavigate();
   const paths = loc.pathname.split("/").filter(Boolean);
-  console.log({ xx, paths });
   return (
     <div className="border-b border-gray-200 dark:border-zinc-700 mb-2 pb-2">
       <ul className="pl-4 flex items-center gap-1 text-xs text-gray-300">
