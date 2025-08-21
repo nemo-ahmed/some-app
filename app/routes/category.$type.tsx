@@ -1,4 +1,4 @@
-import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
+import { type LoaderFunctionArgs, type MetaFunction } from "@remix-run/node";
 import { Outlet, useLoaderData } from "@remix-run/react";
 import CategoryPageSwitcher from "~/components/category/categoryPageSwitcher";
 import { decodeDynamicPath, paramsDecoder } from "~/utils/dynamicUrlsHandler";
@@ -23,7 +23,7 @@ function CategoryType() {
 export default CategoryType;
 
 export const loader = async ({
-  request,
+  // request,
   params,
   context,
 }: LoaderFunctionArgs) => {

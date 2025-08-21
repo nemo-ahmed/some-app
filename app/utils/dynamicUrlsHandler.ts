@@ -1,4 +1,4 @@
-import type { Params } from "@remix-run/react";
+import  { type Params } from "@remix-run/react";
 
 export const encodeDynamicPath = (path: string): string => {
   return path.replaceAll(" ", "_");

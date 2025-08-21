@@ -1,4 +1,4 @@
-import React, { createElement } from "react";
+import { createElement } from "react";
 
 function Input(props: Partial<HTMLInputElement>) {
   return createElement("input", {

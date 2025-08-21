@@ -1,3 +1,4 @@
+import { type LinksFunction } from "@remix-run/node";
 import {
   isRouteErrorResponse,
   Links,
@@ -7,13 +8,12 @@ import {
   ScrollRestoration,
   useRouteError,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
 // existing imports
 
 import appStylesHref from "./app.css?url";
 import "./app.css";
+import HeadStrap from "./components/headStrap";
 import Nav from "./components/nav";
-import Breadcrumbs from "./components/breadcrumbs";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -42,6 +42,7 @@ export function Layout() {
         <Nav />
         <ScrollRestoration />
         <main>
+          <HeadStrap />
           <Outlet
             context={{
               ab: 24,

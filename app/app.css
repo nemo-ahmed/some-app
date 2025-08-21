@@ -17,6 +17,9 @@ body {
     color-scheme: light;
   }
 
+  button {
+    @apply cursor-pointer;
+  }
   nav {
     @apply flex flex-col h-full  border-r border-gray-200 dark:border-zinc-700;
     a {

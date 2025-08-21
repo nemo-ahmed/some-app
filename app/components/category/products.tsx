@@ -1,4 +1,3 @@
-import { Link } from "@remix-run/react";
 import ProductCard from "./productCard";
 
 function Products({ data }: { data: Record<string, string> }) {

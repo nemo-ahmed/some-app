@@ -1,5 +1,4 @@
-import type { ActionFunctionArgs } from "@remix-run/node"; // or cloudflare/deno
-import { json, redirect } from "@remix-run/node"; // or cloudflare/deno
+import { json, redirect, type ActionFunctionArgs } from "@remix-run/node"; // or cloudflare/deno
 import { Form, useActionData } from "@remix-run/react";
 import Input from "~/components/input";
 
