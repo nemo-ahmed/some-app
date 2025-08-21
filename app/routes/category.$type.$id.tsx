@@ -1,11 +1,10 @@
-import  { type HeadersFunction, type LoaderFunctionArgs  } from "@remix-run/node";
+import { type HeadersFunction, type LoaderFunctionArgs } from "@remix-run/node";
 import { type MetaFunction } from "@remix-run/react";
 import Product from "~/components/category/product";
 import { decodeDynamicPath } from "~/utils/dynamicUrlsHandler";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   // ! This will need to be verified as sometimes it's value is "installHook.js.map"
-  console.log("CategoryType loader called", decodeDynamicPath(params.id || ""));
   return decodeDynamicPath(params.id || "");
 };
 

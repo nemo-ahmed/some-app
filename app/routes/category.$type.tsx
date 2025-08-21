@@ -10,12 +10,10 @@ function CategoryType() {
   return (
     <div>
       <div className="border-b border-gray-200 dark:border-zinc-700 mb-2 pb-2">
-        <h1 className="pl-4 capitalize !text-3xl !mb-1">
-          {decodeDynamicPath(data.type)}
-        </h1>
+        <h1 className="pl-4 capitalize !text-3xl !mb-1">{data.params.type}</h1>
       </div>
       <CategoryPageSwitcher />
-      <Outlet />
+      <Outlet context={data} />
     </div>
   );
 }
@@ -34,7 +32,20 @@ export const loader = async ({
     context
   );
 
-  return paramsDecoder(params);
+  return {
+    params: paramsDecoder(params),
+    products: [
+      { title: "1" },
+      { title: "2" },
+      { title: "3" },
+      { title: "123" },
+      { title: "12" },
+      { title: "23" },
+      { title: "34" },
+      { title: "33" },
+      { title: "32" },
+    ],
+  };
 };
 
 export const meta: MetaFunction<
