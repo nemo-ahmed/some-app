@@ -9,7 +9,7 @@ function CategoryType() {
   console.log("category", data);
   return (
     <div>
-      <div className="border-b border-gray-200 dark:border-zinc-700 mb-2 pb-2">
+      <div className="border-b border-gray-200 dark:border-zinc-700 py-2">
         <h1 className="pl-4 capitalize !text-3xl !mb-1">{data.params.type}</h1>
       </div>
       <CategoryPageSwitcher />

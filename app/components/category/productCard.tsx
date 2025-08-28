@@ -3,9 +3,9 @@ import { encodeDynamicPath } from "~/utils/dynamicUrlsHandler";
 
 function ProductCard({ title }: { title: string }) {
   return (
-    <div className="p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between w-[200px] h-[300px] bg-zinc-800 hover:bg-zinc-800/90 group">
-      <div className="h-5/6 w-full p-4 bg-zinc-700 group-hover:bg-zinc-700/90 rounded-lg" />
-      <h2 className="text-xl font-semibold text-gray-300">
+    <div className="p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between w-[14.38rem] h-72 bg-french-gray-900 dark:bg-french-gray-100 group-hover:bg-french-gray-800/90 dark:group-hover:bg-french-gray-100/90 group">
+      <div className="h-5/6 p-4 bg-french-gray-700 dark:bg-french-gray-200 group-hover:bg-french-gray-700/90 dark:group-hover:bg-french-gray-200/90 rounded-lg" />
+      <h2 className="text-xl font-semibold">
         <Link to={encodeDynamicPath(title)}>Product {title}</Link>
       </h2>
     </div>

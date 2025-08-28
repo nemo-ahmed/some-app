@@ -35,6 +35,7 @@ export function Layout() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="/app/app.css" rel="stylesheet" />
         <Meta />
         <Links />
       </head>
@@ -43,12 +44,9 @@ export function Layout() {
         <ScrollRestoration />
         <main>
           <HeadStrap />
-          <Outlet
-            context={{
-              ab: 24,
-              cd: "efg",
-            }}
-          />
+          <div className="@container pt-2">
+            <Outlet />
+          </div>
         </main>
         <Scripts />
       </body>

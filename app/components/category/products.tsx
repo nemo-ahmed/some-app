@@ -8,12 +8,10 @@ function Products({}: {}) {
   }>();
 
   return (
-    <div>
-      <div className="flex items-center px-1 py-4 gap-4 flex-wrap">
-        {data.products.map((product) => (
-          <ProductCard key={product.title} title={product.title} />
-        ))}
-      </div>
+    <div className="flex items-center wrap-anywhere justify-start gap-4 py-4 px-5 flex-wrap h-[calc(100dvh-7.1rem)] overflow-auto">
+      {data.products.map((product) => (
+        <ProductCard key={product.title} title={product.title} />
+      ))}
     </div>
   );
 }

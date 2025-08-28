@@ -17,10 +17,12 @@ function Product() {
       </div>
 
       {/* // ! should be replaced with recommendations instead */}
-      <div className="flex items-center mt-4 px-1 py-4 gap-4 flex-wrap">
-        {contextData.products.map((product) => (
-          <ProductCard key={product.title} title={product.title} />
-        ))}
+      <div className="flex justify-center">
+        <div className="flex items-center mt-4 px-1 py-4 gap-4 flex-wrap">
+          {contextData.products.map((product) => (
+            <ProductCard key={product.title} title={product.title} />
+          ))}
+        </div>
       </div>
     </>
   );
