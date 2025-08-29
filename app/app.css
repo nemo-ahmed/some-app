@@ -123,9 +123,9 @@ body {
   nav {
     @apply flex flex-col h-full w-36 border-r border-gray-200 dark:border-zinc-700;
     a {
-      @apply mx-4 my-1.5 h-fit flex hover:text-blue-600 dark:hover:text-blue-400 capitalize;
+      @apply mx-4 my-1.5 h-fit flex hover:text-french-gray-400 capitalize;
       &.active {
-        @apply text-gray-400;
+        @apply text-french-gray-400 dark:text-french-gray-400;
       }
     }
     ul {

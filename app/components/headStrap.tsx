@@ -3,7 +3,7 @@ import { useOutletContext } from "@remix-run/react";
 function HeadStrap() {
   const user = useOutletContext();
   return (
-    <div className="flex justify-between items-center px-2 py-2.5 h-12 shadow-sm shadow-white/30 dark:bg-zinc-50/5">
+    <div className="flex justify-between items-center px-2 py-2.5 h-12 shadow-sm shadow-black/30 dark:shadow-white/30">
       <h2 className="text-lg font-bold">My Application</h2>
       <div className="flex items-center gap-2">
         {user?.id ? (

@@ -44,7 +44,7 @@ export function Layout() {
         <ScrollRestoration />
         <main>
           <HeadStrap />
-          <div className="@container pt-2">
+          <div className="@container">
             <Outlet />
           </div>
         </main>
